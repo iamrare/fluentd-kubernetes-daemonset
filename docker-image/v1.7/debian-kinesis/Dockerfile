@@ -20,6 +20,7 @@ COPY Gemfile* /fluentd/
      -y --no-install-recommends \
      $buildDeps net-tools \
     && gem install bundler --version 1.16.2 \
+    && gem install fluent-plugin-add-uuid \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
     && SUDO_FORCE_REMOVE=yes \
